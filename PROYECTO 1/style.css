@@ -1,0 +1,222 @@
+:root {
+    --blanco: #ffffff;
+    --oscuro: #212121;
+    --primario: #ffc107;
+    --secundario:#0897A7;
+    --gris: #757575;
+
+}
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+    scroll-snap-type: y mandatory;
+}
+
+body {
+    font-size: 16px; /* 1 rem= 10px*/
+    font-family: 'Krub', sans-serif;
+    background-image: linear-gradient(to top, #dfe9f3 0%, var(--blanco) 100%);
+}
+h1 {
+    font-size: 3.8rem;
+}
+h2 {
+    font-size: 2.8rem;
+}
+h3 {
+    font-size: 1.8rem;
+}
+h1, h2, h3 {
+    text-align: center;
+}
+.titulo span {
+    font-size: 2rem;
+}
+.contenedor {
+    max-width: 120rem;
+    margin: 0 auto 0 auto;
+    text-align: center;
+    
+}
+.sombra {
+    background-color: var(--blanco);
+    padding: 2rem;
+    border-radius: 2rem;
+    width: 65%;
+    box-shadow:dimgray; 
+}
+.button {
+    background-color: var(--secundario);
+    color: var(--blanco);
+    padding: 5px;
+    margin-top: 10px;
+    font-size: 20px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: 5px;
+    width: 90%;
+    text-align: center;
+    border: none;
+}
+button:hover {
+    cursor: pointer;
+}
+@media (min-width: 488px) {
+    .button {
+        width: auto;
+        padding: auto;
+    }
+}
+/*utilidades*/
+.w-sm-100 {
+    width: 100%;
+}
+@media (min-width: 750px) {
+     .w-sm-100 {
+         width: auto;
+     }
+}
+.flex {
+    display: flex;
+}
+.alinear-derecha {
+ justify-content: flex-end;
+}
+.nav-bg {
+    background-color: var(--secundario);
+}
+.navegacion-principal a {
+    text-decoration: none;
+    color: var(--blanco);
+    font-weight: 700;
+    font-size: 2rem;
+    padding: 1rem;
+}
+.navegacion-principal {
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;  
+}
+@media (min-width: 758px){
+    .navegacion-principal {
+        flex-direction: row;
+        justify-content: space-around; 
+    }
+}
+.navegacion-principal a:hover {
+   background-color: var(--primario);
+   color: var(--oscuro);
+}
+.hero {
+    background-image:url(../newyorkk.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 250px;
+    padding: 20px;
+    position: relative;
+    margin-bottom: 20px;
+}
+.contenido-hero {
+    position: absolute;
+    background-color:  rgb(0,0,0,.5);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+/*scroll-snap*/
+.servicios, .navegacion-principal, .formulario {
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+}
+ /** servicios **/
+ @media (min-width: 768px) { 
+    .servicios {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr; 
+        /* repeat (3, 1fr)=es lo mismo*/
+    }
+ }
+ .servicio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+ }
+ .servicio h3 {
+    color: var(--secundario);
+    font-weight: normal;
+ }
+ .servicio p {
+      line-height: 2;
+ }
+ .servicio .iconos {
+      height: 150px;
+      width: 150px;
+      background-color: var(--primario);
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+ }
+.formulario {
+    background-color: var(--gris);
+    width: min: (600px, 100%);
+    padding: 20px;
+    border-radius: 10px;  
+
+}
+.formulario fieldset {
+    border: none;
+    
+}
+.formulario legend {
+    font-size: 18px;
+    text-transform: uppercase;
+    color: var(--primario);
+    font-weight: 700;
+    margin-bottom: 20px;
+    
+}
+.contenedor-campos {
+    margin-right: 25px;
+}
+.campo {
+  margin-bottom: 10px;
+}
+.campo label {
+  color: var(--blanco);
+  font-weight: bold;
+  margin-bottom: 5px;
+  display: block;
+}
+.input-text {
+    width: 100%;
+    border: none;
+    padding: 15px;
+    border-radius: 5px;
+}
+.campo textarea {
+    height: 40px;
+}
+@media (min-width: 758px){
+    .contenedor-campos {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 10px;
+        grid-template-rows: auto auto 90px;
+    }
+}
+.campo:nth-child(3),
+.campo:nth-child(4) { 
+       grid-column: 1/3;
+}
+/**footer**/
+.footer {
+    text-align: center;
+}
